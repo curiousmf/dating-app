@@ -8,20 +8,24 @@
     <title>АНКЕТЫ</title>
 </head>
 
-<body>
+<body style="background-color: blanchedalmond;">
     <div style="margin: auto;
     margin-top: 20px;
     width: 300px;
-    text-align: center;">
-        <a href="registration">Регистрация</a>
+    text-align: center;
+    border-top: 3px solid red;">
+        <a href="registration" style="color: black;
+        background-color: bisque;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Регистрация</a>
     </div>
     <div style="margin: auto;
-                margin-top: 100px;
+                margin-top: 50px;
                 width: 300px;">
         {% for profile in profiles %}
         <div style="border: 3px solid black;
                         margin-bottom: 10px;
-                        text-align: center;">
+                        text-align: center;
+                        background-color: aqua;">
             <p>{{ profile }}</p>
             <p>{{ profile.age }}</p>
             <p>{{ profile.salary }} dollarov</p>
