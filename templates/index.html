@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АНКЕТЫ</title>
+</head>
+
+<body>
+    <div style="margin: auto;
+    margin-top: 20px;
+    width: 300px;
+    text-align: center;">
+        <a href="registration">Регистрация</a>
+    </div>
+    <div style="margin: auto;
+                margin-top: 100px;
+                width: 300px;">
+        {% for profile in profiles %}
+        <div style="border: 3px solid black;
+                        margin-bottom: 10px;
+                        text-align: center;">
+            <p>{{ profile }}</p>
+            <p>{{ profile.age }}</p>
+            <p>{{ profile.salary }} dollarov</p>
+            <p>
+                <a href="{{ profile.get_absolute_url }}" style="background-color: green;
+                            color: white;">
+                    Перейти к профилю
+                </a>
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

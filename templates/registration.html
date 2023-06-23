@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'dating/css/registration.css' %}">
+    <title>Document</title>
+</head>
+
+<body style="background-color: burlywood;">
+    <div style="margin: 0 auto;
+                text-align: center;
+                width: 70px;
+                height: 20px;
+                background-color: white;
+                border-radius: 15%;
+                ">
+        <a href="http://127.0.0.1:8000/" style="text-decoration: none;
+                    color: black;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">HOME</a>
+
+        <style>
+            a:hover {
+                text-decoration: line-through;
+                background-color: bisque;
+                transition: color 2s white;
+            }
+        </style>
+    </div>
+
+    <form action="" method="post" style="width: 500px; margin: auto;">
+        {% csrf_token %}
+        <div class="mb-3" style="margin-top: 50px;">
+            <label for="name" class="form-label">Person name</label>
+            <input name="name" type="text" class="form-control" id="name">
+        </div>
+        <div class="mb-3">
+            <label for="surname" class="form-label">Person surname</label>
+            <input name="surname" type="text" class="form-control" id="surname">
+        </div>
+        <div class="mb-3">
+            <label for="age" class="form-label">Person age</label>
+            <input name="age" type="number" class="form-control" id="age">
+        </div>
+        <div class="mb-3">
+            <label for="status" class="form-label">Status</label>
+            <select v-model="selected" name="status" id="status">
+                <option disabled value="">Выберите один</option>
+                <option>Учусь</option>
+                <option>Работаю</option>
+                <option>Туплю</option>
+                <option>Мамкин миллиардер</option>
+                <option>Мамин бродяга, папин симпотяга</option>
+            </select>
+            <!-- <input name="status" type="text" class="form-control" id="status"> -->
+        </div>
+        <div class="mb-3">
+            <label for="salary" class="form-label">Salary</label>
+            <input name="salary" type="number" class="form-control" id="salary">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="description" style="resize: none;" cols="50" rows="5" class="form-control"
+                id="description"></textarea>
+        </div>
+
+        <button name="add_button" type="submit" class="btn btn-primary" style="margin-top: 20px;">Add Person</button>
+    </form>
+</body>
+
+</html>
